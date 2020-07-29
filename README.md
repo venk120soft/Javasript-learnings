@@ -69,3 +69,18 @@ React application is Declarative.
 ## Web Workers In javascript
 
 ## pass by Value vs pass by Ref in javascript
+
+
+
+
+# Question and Answers
+## What is Javascript?
+Javascript is a single threaded, case sensitive, object oriented programming language
+It is intially created for making the web pages alive. It is used to create and control the web content.
+
+## Define scope in Javascript?
+Lexical scope, global scope , block scope
+
+## What is closure and when do we use it?
+A function inside other function will create a closure, 
+
