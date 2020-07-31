@@ -14,7 +14,7 @@ setTimeOut and clearTimeout(timerId) can be used to implement this.
 
 [more info](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
 
-## DeepCopy and Shallow Copy:
+## DeepCopy and Shallow Copy
 When DeepCopy is done, when we make changes to the copy variable it won't reflect to the original variable.
 Whereas ShallowCopy do reflect the changes to original
 
@@ -67,9 +67,49 @@ Is React Application Declarative or Imperative?
 React application is Declarative.
 
 ## Web Workers In javascript
+Javascript is a single threaded application, when we want to do mutliple operations on the web page, due to its single threaded behaviour the page will go to un responsive.
 
-## pass by Value vs pass by Ref in javascript
+Web worker provides mechanism to span(run) a seperate script in background for web application, where we can do any complex operations without disturbing the UI.
+The communication between theese 2 (page and worker) happens using postMessge() and onMessage().
+page/worker can send the message using postMessage() and receive the message using onMessage() call back functions
 
+```javascript
+Ex: WebWorkerTest.html
+
+// to check webWorker functionality available for browser
+if(window.WebWorker){
+  var myWorker= new WebWorker("worker.js");
+  var message= {abc:{num1: 1, num2:2}};
+  // sending the message to worker.js
+  myWorker.postMessage(message);
+
+  myWorker.onMessage = function(e){
+    console.log(e.data.result);
+  }
+}
+
+// Worker.js
+
+// it receives the message
+this.onMessage= function(e){
+  if(e.data.abc!==undefined){
+    // after receiving message making the new result object and sending back again
+    this.postMessage({
+        result: e.data.abc.num1+ e.data.abc.num2
+    })
+  }
+}
+
+// for importing other web workers we use below method
+importScripts() 
+// for terminating  web worker
+myWorker.terminate();
+```
+Web worker has no acess to 
+window object, document object and parent object, however it has access to navigator, xmlhttp request  user agent, geo location, cookeyenabled, application cache, href, setTimeOut()/ ClearTimeOut(), setinterval()/clearInterval()
+Note: Async calls or ajax calls are 
+## pass by Value or pass by Ref in javascript
+Javascript Always pass the parameters to the functions by Value 
 
 
 
@@ -81,6 +121,6 @@ It is intially created for making the web pages alive. It is used to create and 
 ## Define scope in Javascript?
 Lexical scope, global scope , block scope
 
-## What is closure and when do we use it?
-A function inside other function will create a closure, 
+## What is closure? when and why do we use it?
+A function inside another function will create a closure. to access the inside function variables we use this.    
 
