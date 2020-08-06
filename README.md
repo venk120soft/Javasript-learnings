@@ -114,7 +114,7 @@ Javascript Always pass the parameters to the functions by Value
 
 
 # Question and Answers
-## What is Javascript?
+## What is Javascript? Is it synchronous or Asynchronous?
 Javascript is a single threaded, case sensitive, object oriented programming language
 It is intially created for making the web pages alive. It is used to create and control the web content.
 
@@ -124,3 +124,8 @@ Lexical scope, global scope , block scope
 ## What is closure? when and why do we use it?
 A function inside another function will create a closure. to access the inside function variables we use this.    
 
+## What is the difference between writing nested functions vs closures?
+
+## How does the asynchronous call made internally in javascript?
+
+## Whats the difference between Call, Apply and bind
