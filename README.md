@@ -1,7 +1,6 @@
 # Javasript-learnings
-Javascript Learnings
 
-I have added the concepts to Improve Wesite Performance using Debouncing and Throttling
+Using Debouncing and Throttling we can improve the performance of webpage
 
 ## Throttling and Debouncing
 Throttling is a technique in which, no matter how many times the user fires the event, 
@@ -23,6 +22,7 @@ DeepCopy can be done using Object.assign({},array), spred operator(...), JSON.pa
 [more info](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
 
 ## Event Bubling and Event Capturing
+Think lik you dropped the water drop in very calm water then how the water will bubble from where it start to end
 https://javascript.info/bubbling-and-capturing
 ```javascript
 <form onclick="alert('form')">FORM
@@ -108,15 +108,17 @@ myWorker.terminate();
 Web worker has no acess to 
 window object, document object and parent object, however it has access to navigator, xmlhttp request  user agent, geo location, cookeyenabled, application cache, href, setTimeOut()/ ClearTimeOut(), setinterval()/clearInterval()
 Note: Async calls or ajax calls are 
-## pass by Value or pass by Ref in javascript
-Javascript Always pass the parameters to the functions by Value 
 
+## Call Apply Bind
 
 
 # Question and Answers
 ## What is Javascript? Is it synchronous or Asynchronous?
 Javascript is a single threaded, case sensitive, object oriented programming language
 It is intially created for making the web pages alive. It is used to create and control the web content.
+
+## pass by Value or pass by Ref in javascript
+Javascript Always pass the parameters to the functions by Value 
 
 ## Define scope in Javascript?
 Lexical scope, global scope , block scope
