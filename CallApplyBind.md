@@ -1,9 +1,12 @@
 ## Using call() Method
 #### Note: If a function is not a method of a JavaScript object, it is a function of the global object
-* We can pass the parameters to the call() method like parameters. Ex: testFunction.call(param1, p2, p3, p4)
-* The call() method can be used on different objects.
-* To use call() method on differnet objects we must pass the first argument as scope of the ownership
-* If the scope of the function points to same object then we can pass as this
+* We can pass the parameters individually to the call() method Ex: testFunction.call(param1, p2, p3, p4)
+* To use call() method on differnet objects we must pass the first argument as scope of that object
+* If the scope of the object points to current object then we can pass as this
+
+* The call() allows for a function/method belonging to one object to be assigned and called for a different object
+* With call(), we can write a method once and then inherit it in another object, without having to rewrite the method for the new object.
+
 ```jaascript
 Ex: 
 testFunc.call(); // this is same as testFunc();
@@ -66,7 +69,10 @@ var person2 = {
   lastName: "Doe"
 }
 
+// Inheriting the props of person1 into person
 person.fullName.call(person1);  // Will return "John Doe"
+
+// Inherting the props of person2 into person
 person.fullName.call(person2);  // Will return "Mary Dow"
 ```
 ### Passing with arguments
@@ -113,5 +119,25 @@ person.fullName.apply(person1, ["Oslo", "Norway"]); // "John Doe,Oslo,Norway"
 
 // using call()
 person.fullName.call(person1, "Oslo", "Norway"); // "John Doe,Oslo,Norway"
+
+```
+# Using bind() Method
+bind() method will return the new function. This keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
+
+```javascript
+const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
 
 ```
