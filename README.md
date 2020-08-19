@@ -1,4 +1,4 @@
-# Javasript-learnings
+# Javascript-learnings
 
 ## Throttling and Debouncing
 Using Debouncing and Throttling we can improve the performance of webpage
