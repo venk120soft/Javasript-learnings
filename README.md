@@ -139,3 +139,10 @@ A function inside another function will create a closure. to access the inside f
 ## How does the asynchronous call made internally in javascript?
 
 ## Whats the difference between Call, Apply and bind
+call() method can be used to inherit method in another object. to acheive this we must pass the first argument as the object which want to inherit.
+
+call() method accepts individual parameters
+
+apply() method accepts the list of parameters
+
+bind() method will return the new function. This keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
