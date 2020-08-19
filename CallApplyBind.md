@@ -1,10 +1,17 @@
-## Using Call()
+## Using call() Method
 #### Note: If a function is not a method of a JavaScript object, it is a function of the global object
 * We can pass the parameters to the call() method like parameters. Ex: testFunction.call(param1, p2, p3, p4)
 * The call() method can be used on different objects.
-* To use call() method on differnet objects we pass the first argument as scope of the ownership
+* To use call() method on differnet objects we must pass the first argument as scope of the ownership
 * If the scope of the function points to same object then we can pass as this
-
+```jaascript
+Ex: 
+testFunc.call(); // this is same as testFunc();
+testFunc.call(this); // pointing to the parent scope
+testFunc.call(this, p1,p2); // same object scope
+testFunc.call(person1, p1,p2); // different object scope
+testFunc.call(person2, p1,p2); // different object scope
+```
 [more info](https://www.w3schools.com/js/js_function_call.asp)
 
 ### Passing without params
@@ -74,4 +81,37 @@ var person1 = {
   lastName: "Doe"
 }
 person.fullName.call(person1, "Oslo", "Norway"); // will return  John Doe,Oslo,Norway
+```
+
+# Using apply() Method
+The difference between the call() and apply() method is passing the way of parameters
+
+* apply() allows to pass the parameters like an array.
+* This method is helpfull to extend functionalities to the existing one ex: arrays
+
+arrays does not have the functionality to get the max element we can extend that by calling apply on that.
+```javascript
+// For all below we get output as 3
+Math.max.apply(5,[1,2,3]);
+Math.max.apply(' ',[1,2,3]);
+Math.max.apply(this,[1,2,3]);
+Math.max.apply(null,[1,2,3]);
+Math.max.apply(undefined,[1,2,3]);
+Math.max.apply("test",[1,2,3]);
+
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+// using apply()
+person.fullName.apply(person1, ["Oslo", "Norway"]); // "John Doe,Oslo,Norway"
+
+// using call()
+person.fullName.call(person1, "Oslo", "Norway"); // "John Doe,Oslo,Norway"
+
 ```
