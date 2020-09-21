@@ -146,3 +146,37 @@ call() method accepts individual parameters
 apply() method accepts the list of parameters
 
 bind() method will return the new function. This keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
+## what is the differnce between splice and slice
+splice takes start index and delete count
+Original array will be effected on splice operation performed
+Splice will delete the no of elements specified as 2nd argument.
+
+```javascript
+var original=['banana','orange','apple','mango','raj'];
+var result = original.splice(2,3);
+console.log(original) => ['apple','mango','raj']
+console.log(result) => ['apple']
+
+var original=['banana','orange','apple','mango','raj'];
+var result = original.splice(2,2);
+console.log(original); => ["banana", "orange", "raj"]
+console.log(result); => ["apple", "mango"]
+```
+slice takes start index, end index
+Original array will not be effected on slice operation
+The second argument will be the end index of an array.
+```javascript
+var original=['banana','orange','apple','mango','raj'];
+var result = original.slice(2,3);
+console.log(original); => ['banana','orange','apple','mango','raj']
+console.log(result); => ["apple"]
+
+ result = original.slice(2,2); 
+ console.log(result) => []
+ result = original.slice(2,1); 
+ console.log(result) => []
+ result = original.slice(2,0); 
+ console.log(result) => []
+ result = original.slice(2,4); 
+ console.log(result) => ["apple", "mango"]
+```
