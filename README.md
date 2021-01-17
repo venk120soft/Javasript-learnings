@@ -57,7 +57,7 @@ ex: <input onChange={} onClick={}>
 
 This will not work for the same element's multiple events, to handle this we have to use event.stopImmediatePropagation()
 
-## What is the difference between Controlled and un controlled inputs?
+## What is the difference between controlled and un-controlled inputs?
 In most cases, we recommend using controlled components to implement forms. 
 
 In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
@@ -121,10 +121,33 @@ Note: Async calls or ajax calls are
 
 
 # Question and Answers
-## What is Javascript? Is it synchronous or Asynchronous?
-Javascript is a single threaded, case sensitive, object oriented programming language
+## What is Javascript? Is it Synchronous or Asynchronous?
+Javascript is a synchronous, single threaded, case sensitive, object oriented programming language
 It is intially created for making the web pages alive. It is used to create and control the web content.
 
+## How Javascript Program get's executed?
+Javascript program is get executed in two phases 1 is memory creation and 2 is code execution
+When ever any JS program starts the Global execution context is gets created where in we have theese two phaces of execution
+
+First memory for all the variables and functions are get created in Memory Creation context, where in undefined will be stored for all the variables and
+copy of the function gets created for the functions in memory creation context as is.
+
+In next phase,  program start running line by line and the variable values get assigned one by one and it goes to next line like wise
+In any time if the program encounters with the function declaration it just skips that line start moving to next, as soon as it reaches to the line where we calling
+this functions (ex: myFunc()/myFunc(a)) it will create new execution context.
+
+In this new execution context again there are 2 phases 1) memory creation context and 2) code execution context
+it follows the same way as described above like it will assign undefined to all the variables and copy will be created for the functions if it exists
+as soon as it reaches return statement or curly braces(if function is void) it will retun the value to its immediate parent scope variable
+and delete the specific execution context for then it will move to next line.
+
+In case if we have nested functions(a function inside a function) then no of execution context will be created and inside that there are 2 phases will be there
+as described above these are all execution context of functions will be placed inside the single call stack(program stack,machine stack)
+and as soon as scoped function execution is done the context will be deleted from the stack. Finally all function call execution contexts will be deleted and return to the global execution context.
+
+As soon as the all the lines of program is executed and reached to last curly brace or return statement the global context also get deleted
+
+[more info](https://www.youtube.com/watch?v=iLWTnMzWtj4)
 ## pass by Value or pass by Ref in javascript
 Javascript Always pass the parameters to the functions by Value 
 
