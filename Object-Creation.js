@@ -10,7 +10,6 @@ Creating Objects
 ****************************************/
 let log = console.log;
 
-
 // 1. Object literals ////////////////////////////////////
 let obj1 = {
     prop1: 'value1',
@@ -22,7 +21,6 @@ let obj1 = {
 log(1, obj1);
 obj1.prop3();
 log('------------------------------')
-
 
 // 2. Object.create ////////////////////////////////////
 let proto = {
@@ -97,3 +95,47 @@ class ObjC{
 let obj5 = new ObjC('value1', 'value2');
 log(5, obj5);
 obj5.prop3();
+log('------------------------------')
+// ****************************************************************************************************
+enum myConstants{
+a='A',
+b='B',
+c='C'
+}
+// accessing elementes statically
+let aValue=myConstants['a']; 
+log('aValue=',aValue); // o/p: aValue=A
+
+// get the value from enum dyamically
+const key ='a';
+aValue= myConstants[key]; // this will throw error
+
+// correct way to access keys in enum
+const getValueByKey = (key: string): string | null => {
+    if (!key) return null;
+    for (const [k, v] of Object.entries(myConstants))
+      if (key === k) return v;
+    return null;
+  };
+}
+avalue= getValueByKey(key); // o/p: aValue=A
+
+// For Objects
+const myObj={
+a:'A',
+b:'B',
+c:'C'
+};
+
+// Adding new prop statically
+myObj={
+...myObj,
+d:'D'
+} // o/p: {a:'A',b:'B',c:'C',d:'D'}
+//Dynamic way is to keep the variable inside the brackets
+const key='d';
+myObj={
+...myObj,
+[key]:'D'
+}// o/p: {a:'A',b:'B',c:'C',d:'D'}
+
