@@ -139,3 +139,14 @@ myObj={
 [key]:'D'
 }// o/p: {a:'A',b:'B',c:'C',d:'D'}
 
+// Updating props dynamically
+  let newProps = props;
+  for (const k of Object.keys(props)) {
+    if (props[k] && typeof props[k] === 'function') {
+      newProps = {
+        ...newProps,
+        [k]: safeFunc(props[k])
+      };
+    }
+  }
+  return newProps;
