@@ -1,3 +1,7 @@
+FYI:
+console.log(true+1) //2
+console.log(false+1) //1
+
 What is the differene between null vs undefined in javascript?
 null is an Object type and it holds value of nothing. undefined is special type called undefined.
 by default if the variable  is not assigned to any value.
