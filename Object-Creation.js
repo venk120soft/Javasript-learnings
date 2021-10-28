@@ -150,3 +150,31 @@ myObj={
     }
   }
   return newProps;
+
+// How to Clone an Object in JavaScript (without reference)
+// https://reactgo.com/javascript-clone-object/
+// Cloning an object using Object.assign
+const obj = {a:1,b:2,c:3};
+const clone = Object.assign({},obj);
+console.log(clone); // {a:1,b:2,c:3};
+
+// Cloning an Object using spread operator
+const obj = {a:1,b:2,c:3};
+const clone = {...obj};
+console.log(clone); // {a:1,b:2,c:3};
+
+// Deep copying
+const obj = {a:1,b:2,c:{d:3}};
+const deepClone = JSON.parse(JSON.stringify(obj));
+obj.c.d = 35;
+// d value is changed
+console.log(obj); // {a:1,b:2,c:{d:35}}
+// d value remains unchanged because there is no reference
+console.log(deepClone); // {a:1,b:2,c:{d:3}}
+
+// Shallow copying
+const obj = {a:1,b:2,c:{d:3}};
+const shallowClone = {...obj};
+obj.c.d = 34; // updates the d property value
+console.log(obj); // {a:1,b:2,c:{d:34}}
+console.log(shallowClone); // {a:1,b:2,c:{d:34}}
