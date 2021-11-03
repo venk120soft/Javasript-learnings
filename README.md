@@ -245,7 +245,13 @@ window object, document object and parent object, however it has access to navig
 Note: Async calls or ajax calls are 
 
 ## Call Apply Bind
+call(): This method accepts individual parameters, this can be used to inherit method in another object. to acheive this we must pass the first argument as the object which want to inherit.
 
+apply(): This method accepts the list of parameters
+
+bind(): this method will return the new function. This should be the first param to pass in and this keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
+
+[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/CallApplyBind.md)
 
 # Question and Answers
 ## What is Javascript? Is it Synchronous or Asynchronous?
@@ -292,15 +298,6 @@ We can say callbacks are the examples for closures, it has access to it's parent
 
 ## How does the asynchronous call made internally in javascript?
 
-## Whats the difference between Call, Apply and bind
-    call() method can be used to inherit method in another object. to acheive this we must pass the first argument as the object which want to inherit.
-
-    call() method accepts individual parameters
-
-    apply() method accepts the list of parameters
-
-    bind() method will return the new function. This keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
-[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/CallApplyBind.md)
 ## what is the differnce between splice and slice
 splice takes start index and delete count
 Original array will be effected on splice operation performed
