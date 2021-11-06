@@ -14,13 +14,13 @@ like: to get the groom for child first Grand Parent has to be informed, then par
 
 To stop the event prpegation from top to bottom or bottom to top we can use the 
 
-#### event.stopPropagation() : This will stop rest of the events to fire
+We can stop this using ***event.stopPropagation()***. If an element has multiple event handlers on a single event, then even if one of them stops the bubbling, the other ones still execute.
 
-#### event.stopImmediatePropagation() : If an element has multiple event handlers on a single event, then even if one of them stops the bubbling, the other ones still execute.
+In case of multiple events for the element ex: 
 
-In other words, event.stopPropagation() stops the move upwards, but on the current element all other handlers will run.
+      <input onChange={} onClick={}>
 
-To stop the bubbling and prevent handlers on the current element from running, there’s a method event.stopImmediatePropagation(). After it no other handlers execute.
+This will not work for the same element's multiple events, to handle this we have to use ***event.stopImmediatePropagation()***
 
 ## How to diffentiate between the Event Bubling and capturing in Event handlers
 ```javascript
