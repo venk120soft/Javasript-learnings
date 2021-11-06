@@ -37,23 +37,24 @@ When We click any one of the elements in the document, the events will fire to i
 Consider above code,
 The standard DOM Events describes 3 phases of event propagation:
 
-Capturing phase – the event goes down to the element. [from top element to Bottom]
+##### Capturing phase – the event goes down to the element. [from top element to Bottom]
 
-Target phase – the event reached the target element. [right to the current element(target)]
+##### Target phase – the event reached the target element. [right to the current element(target)]
 
-Bubbling phase – the event bubbles up from the element. [from bottom to top]
+##### Bubbling phase – the event bubbles up from the element. [from bottom to top]
 
 So if we click on paragraph element we’ll see 3 alerts: p → div → form.
 
 The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water.
 Almost all the events will do the event bubling.
 
-[more info](https://javascript.info/bubbling-and-capturing)
+[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
 ## How do you stop the event to bubble/capture/propegation?
 We can stop this using event.stopPropagation()
 
-In case of multiple events for the element
-ex: <input onChange={} onClick={}>
+In case of multiple events for the element ex: 
+
+      <input onChange={} onClick={}>
 
 This will not work for the same element's multiple events, to handle this we have to use event.stopImmediatePropagation()
 
