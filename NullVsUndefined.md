@@ -5,7 +5,8 @@ console.log(false+1) //1
 ## What is the differene between null vs undefined in javascript?
 null is an Object type and it holds value of nothing. undefined is special type called undefined.
 by default if the variable  is not assigned to any value.
-These are two special values. They’re special because there’s a lot of things you can’t do with them — they often cause errors. Usually, null represents that some value is missing intentionally,
+
+These are two special values. They’re special because there’s a lot of things you can’t do with them — they often cause errors. Usually, null represents that some value is missing intentionally, and undefined represents that a value is missing unintentionally. However, when to use either is left to the programmer. They exist because sometimes it’s better for an operation to fail than to proceed with a missing value.
 
 ```javascript
 // In Practical
