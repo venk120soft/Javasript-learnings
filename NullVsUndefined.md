@@ -17,17 +17,17 @@ var test = null
 console.log(typeof test); // null
 console.log(test.something); //Uncaught TypeError: Cannot read property 'something' of null
 
-console.log(null === null);
-console.log(null == null);
+console.log(null === null); // true
+console.log(null == null); // true
 
-console.log(undefined === undefined);
-console.log(undefined == undefined);
+console.log(undefined === undefined); // true
+console.log(undefined == undefined); // true
 
-console.log(null === undefined);
-console.log(null == undefined);
+console.log(null === undefined); // false
+console.log(null == undefined); // true
 
-console.log(!null);
-console.log(!undefined);
+console.log(!null); // true
+console.log(!undefined); // true
 
 // All numeric operations on the unbdefined will lead to the NaN
 console.log(undefined + 1 ); // NaN
