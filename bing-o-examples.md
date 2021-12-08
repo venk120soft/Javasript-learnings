@@ -1,3 +1,14 @@
+[Resources](https://www.freecodecamp.org/news/my-first-foray-into-technology-c5b6e83fe8f1/) | [Big O Cheetsheet](https://www.bigocheatsheet.com/)
+
+Order of best to Worst Bing O Complexity
+- O(1)
+- O(log n)
+- O(n)
+- O(n log n)
+- O(n^2)
+- O(2^n)
+- O(n!)
+
 # O(1) - Constant time complexity
 ```javascript
   const myArray=[5,6,8,9];
@@ -52,12 +63,14 @@ var doSearch = function(array, targetValue) {
 };
 ```
 # O(n^2) - Quadratic time complexity
- A good example of this is checking to see whether there are any duplicates in a deck of cards.include bubble sort, selection sort, and insertion sort.
+For each element in an array will loop through with all other remaining elements every time then it is called O(n^2). 
+A good example of this is checking to see whether there are any duplicates in a deck of cards.include bubble sort, selection sort, and insertion sort.
 ```javascript
 for(var i = 0; i < length; i++) {     
     //has O(n) time complexity    
     for(var j = 0; j < length; j++) { 
         //has O(n^2) time complexity      // More loops?
+        // If it has one more loop O(n^3) => one more loop inside it O(n^4)...etc
     }
 }
 ```
