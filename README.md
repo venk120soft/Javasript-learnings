@@ -1,5 +1,5 @@
 # Javascript-learnings
-
+Note: All the synchronous code will run first and async code will be kept in event loop which will execute after the entire synchronous operations are executed
 ## Throttling and Debouncing
 Using Debouncing and Throttling we can improve the performance of webpage
 
