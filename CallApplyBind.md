@@ -114,12 +114,18 @@ var person1 = {
   firstName:"John",
   lastName: "Doe"
 }
+
+var person2 = {
+  firstName:"Ram",
+  lastName: "Sethu"
+}
 // using apply()
 person.fullName.apply(person1, ["Oslo", "Norway"]); // "John Doe,Oslo,Norway"
+person.fullName.apply(person2, ["Oslo", "Norway"]); // "Ram Sethu,Oslo,Norway"
 
 // using call()
 person.fullName.call(person1, "Oslo", "Norway"); // "John Doe,Oslo,Norway"
-
+person.fullName.call(person2, ["Oslo", "Norway"]); // "Ram Sethu,Oslo,Norway"
 ```
 # Using bind() Method
 bind() method will return the new function. This keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
