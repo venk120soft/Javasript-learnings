@@ -1,6 +1,6 @@
 [Resources](https://www.freecodecamp.org/news/my-first-foray-into-technology-c5b6e83fe8f1/) | [Big O Cheetsheet](https://www.bigocheatsheet.com/)
 
-Order of best to Worst Bing O Complexity
+Order of best to Worst Bing O Complexit
 - O(1)
 - O(log n)
 - O(n)
