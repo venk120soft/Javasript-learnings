@@ -22,6 +22,9 @@ In case of multiple events for the element ex:
 
 This will not work for the same element's multiple events, to handle this we have to use ***event.stopImmediatePropagation()***
 
+## Explain Event Delegation Model
+When capturing and bubbling, allow functions to implement one single handler to many elements at one particular time then that is called event delegation. Event delegation allows you to add event listeners to one parent instead of specified nodes. That particular listener analyzes bubbled events to find a match on the child elements. Many people think it to be complicated but in reality, it is very simple if one starts understanding it.
+
 ## How to diffentiate between the Event Bubling and capturing in Event handlers
 ```javascript
 // By default if we don't pass the 3rd argument, then it is Event bubling or if we pass false also. 3rd argument here is useCapture
