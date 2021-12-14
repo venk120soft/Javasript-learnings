@@ -7,7 +7,9 @@
 * The call() allows for a function/method belonging to one object to be assigned and called for a different object
 * With call(), we can write a method once and then inherit it in another object, without having to rewrite the method for the new object.
 
-```jaascript
+```javascript
+// Call constructor of superclass to initialize superclass-derived members.
+Syntax: yourObject.call(superClassObject, prop1,prop2,...)
 Ex: 
 testFunc.call(); // this is same as testFunc();
 testFunc.call(this); // pointing to the parent scope
