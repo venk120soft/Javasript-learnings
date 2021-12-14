@@ -252,7 +252,7 @@ apply(): This method accepts the list of parameters
 
 bind(): this method will return the new function. This should be the first param to pass in and this keyword will set to the provided value with a given sequence of arguments preceding any provided when the new function is called.
 
-[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/CallApplyBind.md)
+[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
 
 # Question and Answers
 ## What is Javascript? Is it Synchronous or Asynchronous?
@@ -281,6 +281,7 @@ and as soon as scoped function execution is done the context will be deleted fro
 
 As soon as the all the lines of program is executed and reached to last curly brace or return statement the global context also get deleted
 
+* Note: * Asynchronous code will run only when all the synchronous code is executed 
 [more info](https://www.youtube.com/watch?v=iLWTnMzWtj4)
 ## pass by Value or pass by Ref in javascript
 Javascript Always pass the parameters to the functions by Value 
