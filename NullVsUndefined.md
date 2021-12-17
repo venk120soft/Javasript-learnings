@@ -1,6 +1,6 @@
 FYI:
-console.log(true+1) //2
-console.log(false+1) //1
+- console.log(true+1) //2
+- console.log(false+1) //1
 
 ## What is the differene between null vs undefined in javascript?
 null is an Object type and it holds value of nothing. undefined is special type called undefined.
@@ -30,7 +30,7 @@ console.log(null == undefined); // true
 console.log(!null); // true
 console.log(!undefined); // true
 
-// All numeric operations on the unbdefined will lead to the NaN
+// All numeric operations on the undefined will lead to the NaN
 console.log(undefined + 1 ); // NaN
 
 console.log(null + 1); // 1
