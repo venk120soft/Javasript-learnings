@@ -1,3 +1,14 @@
+External Resources:
+- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4)
+- [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
+- [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
+- [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+In same repo:
+- [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
+- [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
+- [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
+- [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
+
 # Javascript-learnings
 Note: All the synchronous code will run first and async code will be kept in event loop which will execute after the entire synchronous operations are executed
 ## Throttling and Debouncing
@@ -366,3 +377,14 @@ In a controlled component, form data is handled by a React component. The altern
 To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
 
 [more info](https://reactjs.org/docs/uncontrolled-components.html)
+
+External Resources:
+- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4)
+- [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
+- [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
+- [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+In same repo:
+- [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
+- [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
+- [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
+- [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
