@@ -8,12 +8,12 @@ Inshort 2: A function inside a function creates a closure
 Inshort 3: Closures are nothing but FUNCTIONS WITH PRESERVED DATA
 
 
-Simple Example 1:
+Simple Example 1: With single function
 ```javascript
-var passed=3;
+var passed = 3;
 
 var addTo = function(){
-  var  inner=2;
+  var  inner = 2;
   return inner + passed;
 }
 ```
@@ -24,3 +24,18 @@ Behind the scenes when we call addTo function it will create the function scope 
 
 If we don't have varibles defined in function scope but trying to read the variable then it will look into the parent scope and up until it founds the value of it.
 If it's not defined anywhere, then the variable will be treated as undefined
+
+![Simple Example 1:](./images/closure-example1.png)
+
+Simple Example 2: Function inside a function 
+```javascript
+var addTo = function(passed){
+
+    var  add = function(inner){
+      return inner + passed; // reading the value of passed from lexical scope
+    }
+
+    return add;     
+}
+```
+![Simple Example 2:](./images/closure-example2.png)
