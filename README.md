@@ -58,141 +58,6 @@ In case of multiple events for the element ex:
 
 This will not work for the same element's multiple events, to handle this we have to use event.stopImmediatePropagation()
 
-## What is the difference between controlled and un-controlled inputs?
-If the form data is controlled by react component then it is Controlled component, if the data is controlled by the DOM itself then it's uncontrolled component.
-
-A form element becomes “controlled” if you set its value via a prop or a state. That’s all.
-
-ex: UnControlled component:
-```javascript
-  private iframe:any;
-  <iframe ref={this.setIframeRef}/>
-  // setting the reference to DOM object
-  private setIframeRef = (comp: any) => this.iframe = comp;
-  // Working with DOM object
-  private postMessageToIframe = (message: any) => {
-    if (this.iframe.contentWindow) {
-      this.iframe.contentWindow.postMessage(
-        message,
-        this.serviceUrl
-      );
-    }
-  }
-  // Ex2:
-        <input type="text" ref={input => this._name = input} />
-        <button onClick={this.handleSubmitClick}>Sign up</button>
-  private handleSubmitClick = () => {
-    const name = this._name.value;
-    // do something with `name`
-  }
-```
-Controlled Components are handled by React state or PROP
-```javascript
-<input type='text' value={this.state.name} onChange={this.onChangeName}/>
-
-private onChangeName=(event:any)=>this.setState({name: event.target.value});
-```
-<table>
-
-<thead>
-
-<tr>
-
-<th>feature</th>
-
-<th>uncontrolled</th>
-
-<th>controlled</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>one-time value retrieval (e.g. on submit)</td>
-
-<td>✅</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>validating on submit</td>
-
-<td>✅</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>instant field validation</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>conditionally disabling submit button</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>enforcing input format</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>several inputs for one piece of data</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>dynamic inputs</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-[more info on it](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
-
-In most cases, we recommend using controlled components to implement forms. 
-
-In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
-
-To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
-
-[more info](https://reactjs.org/docs/uncontrolled-components.html)
 ## What is the difference between declarative and Imperative programming?
 Imperative programming is something like instructing a machine what to do step by step. ex: assembly language
 
@@ -336,3 +201,138 @@ console.log(result); => ["apple"]
  result = original.slice(2,4); 
  console.log(result) => ["apple", "mango"]
 ```
+## What is the difference between controlled and un-controlled inputs?
+If the form data is controlled by react component then it is Controlled component, if the data is controlled by the DOM itself then it's uncontrolled component.
+
+A form element becomes “controlled” if you set its value via a prop or a state. That’s all.
+
+ex: UnControlled component:
+```javascript
+  private iframe:any;
+  <iframe ref={this.setIframeRef}/>
+  // setting the reference to DOM object
+  private setIframeRef = (comp: any) => this.iframe = comp;
+  // Working with DOM object
+  private postMessageToIframe = (message: any) => {
+    if (this.iframe.contentWindow) {
+      this.iframe.contentWindow.postMessage(
+        message,
+        this.serviceUrl
+      );
+    }
+  }
+  // Ex2:
+        <input type="text" ref={input => this._name = input} />
+        <button onClick={this.handleSubmitClick}>Sign up</button>
+  private handleSubmitClick = () => {
+    const name = this._name.value;
+    // do something with `name`
+  }
+```
+Controlled Components are handled by React state or PROP
+```javascript
+<input type='text' value={this.state.name} onChange={this.onChangeName}/>
+
+private onChangeName=(event:any)=>this.setState({name: event.target.value});
+```
+<table>
+
+<thead>
+
+<tr>
+
+<th>feature</th>
+
+<th>uncontrolled</th>
+
+<th>controlled</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>one-time value retrieval (e.g. on submit)</td>
+
+<td>✅</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>validating on submit</td>
+
+<td>✅</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>instant field validation</td>
+
+<td>❌</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>conditionally disabling submit button</td>
+
+<td>❌</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>enforcing input format</td>
+
+<td>❌</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>several inputs for one piece of data</td>
+
+<td>❌</td>
+
+<td>✅</td>
+
+</tr>
+
+<tr>
+
+<td>dynamic inputs</td>
+
+<td>❌</td>
+
+<td>✅</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+[more info on it](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+
+In most cases, we recommend using controlled components to implement forms. 
+
+In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+
+[more info](https://reactjs.org/docs/uncontrolled-components.html)
