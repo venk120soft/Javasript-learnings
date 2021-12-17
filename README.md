@@ -277,97 +277,52 @@ Controlled Components are handled by React state or PROP
 
 private onChangeName=(event:any)=>this.setState({name: event.target.value});
 ```
-<table>
-
-<thead>
-
-<tr>
-
-<th>feature</th>
-
-<th>uncontrolled</th>
-
-<th>controlled</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>one-time value retrieval (e.g. on submit)</td>
-
-<td>✅</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>validating on submit</td>
-
-<td>✅</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>instant field validation</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>conditionally disabling submit button</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>enforcing input format</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>several inputs for one piece of data</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-<tr>
-
-<td>dynamic inputs</td>
-
-<td>❌</td>
-
-<td>✅</td>
-
-</tr>
-
-</tbody>
-
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>feature</th>
+        <th>uncontrolled</th>
+        <th>controlled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>one-time value retrieval (e.g. on submit)</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>validating on submit</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>instant field validation</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>conditionally disabling submit button</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>enforcing input format</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>several inputs for one piece of data</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>dynamic inputs</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+    </tbody>
+  </table>
 
 [more info on it](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
 
