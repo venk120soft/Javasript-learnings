@@ -290,12 +290,14 @@ Javascript Always pass the parameters to the functions by Value
 Lexical scope, global scope , block scope
 
 ## What is closure? when and why do we use it?
+Any function, that access variables outside of its scope is a closure, Closures are nothing but FUNCTIONS WITH PRESERVED DATA
+
 A function inside another function will create a closure. to access the inside function variables we use this.
 
 closures are created every time a function is created, at function creation time.
 To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function
 
-We can say callbacks are the examples for closures, it has access to it's parent values.
+We can say **callbacks** are the examples for closures, it has access to it's parent values.
 ## What is the difference between writing nested functions vs closures?
 
 ## How does the asynchronous call made internally in javascript?
