@@ -1,7 +1,7 @@
 # Javascript-learnings
 Note: All the synchronous code will run first and async code will be kept in event loop which will execute after the entire synchronous operations are executed
 ## Throttling and Debouncing
-Using Debouncing and Throttling we can improve the performance of webpage
+Using Debouncing and Throttling we can improve the performance of webpage. Examples include window resizing and scrolling and search functionality
 
 Throttling is a technique in which, no matter how many times the user fires the event, 
 the attached function will be executed only once in a given time interval.
