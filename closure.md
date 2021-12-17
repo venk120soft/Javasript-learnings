@@ -39,3 +39,5 @@ var addTo = function(passed){
 }
 ```
 ![Simple Example 2:](./images/closure-example2.png)
+
+![Simple Example 3:](./images/closure-example3.png)
