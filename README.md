@@ -163,9 +163,39 @@ closures are created every time a function is created, at function creation time
 To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function
 
 We can say **callbacks** are the examples for closures, it has access to it's parent values.
+
+## What is Currying?
+Currying is advance way allow you to partially evaluate a function by only passing in a subset of its arguments.
+```javascript
+  function multiply (a, b) { 
+    return a * b; 
+  } 
+  const double = multiply(2); 
+  const eight = double(4); 
+  eight = 8; 
+```
+You’ll notice that by providing a single argument to the multiply function, the result was another function that already has the first argument defined as 2. Later, calling that new function with one argument will always multiply by 2.
+
+However, this isn’t directly possible in JS. The primary reason this will likely never be a feature is that JS doesn’t have strict function signatures. I might create a function with no defined arguments and use the arguments object to iterate through an arbitrary number of arguments (modern JS also allows the spread operator for arguments). It’s also common to allow users to only supply a subset of arguments while providing sensible defaults for the ones that are omitted. Because of this behavior, currying in JS would require extra work. The closest you will get using only builtins is the bind method on the Function prototype.
+```javascript
+  function multiply (a, b) { 
+    return a * b; 
+  } 
+  const double = multiply.bind(null, 2); 
+  const eight = double(4); 
+  eight == 8; 
+```
+However, this will only support a single curry because a bound function cannot be bound again. 
+It will also cause issues if the function you want to curry has any dependence on the execution context (the this object). 
+There are ways around this but would involve a lot more work upfront.
+[more info](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
 ## What is the difference between writing nested functions vs closures?
 
 ## How does the asynchronous call made internally in javascript?
+In Javascript, all the **synchronous** operations will be executed first then only **asynchronous** operations will be executed next.
+
+As soon as the code reaches the async operation statement, it will push the statement into the Event loop and Call Stack. 
+These asynchrnous operations will be get executed one after other
 
 ## what is the differnce between splice and slice
 splice takes start index and delete count
@@ -173,33 +203,33 @@ Original array will be effected on splice operation performed
 Splice will delete the no of elements specified as 2nd argument.
 
 ```javascript
-var original=['banana','orange','apple','mango','raj'];
-var result = original.splice(2,3);
-console.log(original) => ['apple','mango','raj']
-console.log(result) => ['apple']
+  var original=['banana','orange','apple','mango','raj'];
+  var result = original.splice(2,3);
+  console.log(original) => ['apple','mango','raj']
+  console.log(result) => ['apple']
 
-var original=['banana','orange','apple','mango','raj'];
-var result = original.splice(2,2);
-console.log(original); => ["banana", "orange", "raj"]
-console.log(result); => ["apple", "mango"]
+  var original=['banana','orange','apple','mango','raj'];
+  var result = original.splice(2,2);
+  console.log(original); => ["banana", "orange", "raj"]
+  console.log(result); => ["apple", "mango"]
 ```
 slice takes start index, end index
 Original array will not be effected on slice operation
 The second argument will be the end index of an array.
 ```javascript
-var original=['banana','orange','apple','mango','raj'];
-var result = original.slice(2,3);
-console.log(original); => ['banana','orange','apple','mango','raj']
-console.log(result); => ["apple"]
+  var original=['banana','orange','apple','mango','raj'];
+  var result = original.slice(2,3);
+  console.log(original); => ['banana','orange','apple','mango','raj']
+  console.log(result); => ["apple"]
 
- result = original.slice(2,2); 
- console.log(result) => []
- result = original.slice(2,1); 
- console.log(result) => []
- result = original.slice(2,0); 
- console.log(result) => []
- result = original.slice(2,4); 
- console.log(result) => ["apple", "mango"]
+   result = original.slice(2,2); 
+   console.log(result) => []
+   result = original.slice(2,1); 
+   console.log(result) => []
+   result = original.slice(2,0); 
+   console.log(result) => []
+   result = original.slice(2,4); 
+   console.log(result) => ["apple", "mango"]
 ```
 ## What is the difference between controlled and un-controlled inputs?
 If the form data is controlled by react component then it is Controlled component, if the data is controlled by the DOM itself then it's uncontrolled component.
