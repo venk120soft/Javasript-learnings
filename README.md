@@ -6,10 +6,10 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
-- [Throttling and Debouncing](https://github.com/venk120soft/Javasript-learnings/blob/master/throttling&debouncing.md)
-- [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
-- [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
-- [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
+- [Throttling and Debouncing](./throttling&debouncing.md)
+- [DeepCopy and Shallow Copy](./deep_copy_vs_shallow_copy.md)
+- [Event Bubling and Event Capturing](./event_bubblin_vs_capturing.md)
+- [Call Apply Bind](./call_apply_bind.md)
 
 # Javascript-learnings
 Note: All the synchronous code will run first and async code will be kept in event loop which will execute after the entire synchronous operations are executed
@@ -343,7 +343,7 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
-- [Throttling and Debouncing](https://github.com/venk120soft/Javasript-learnings/blob/master/throttling&debouncing.md)
-- [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
-- [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
-- [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
+- [Throttling and Debouncing](./throttling&debouncing.md)
+- [DeepCopy and Shallow Copy](./deep_copy_vs_shallow_copy.md)
+- [Event Bubling and Event Capturing](./event_bubblin_vs_capturing.md)
+- [Call Apply Bind](./call_apply_bind.md)
