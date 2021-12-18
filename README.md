@@ -6,7 +6,7 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
-- [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
+- [Throttling and Debouncing](https://github.com/venk120soft/Javasript-learnings/blob/master/throttling&debouncing.md)
 - [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
 - [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
 - [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
@@ -24,7 +24,7 @@ In the debouncing technique, no matter how many times the user fires the event,
 the attached function will be executed only after the specified time once the user stops firing the event.
 setTimeOut and clearTimeout(timerId) can be used to implement this.
 
-[more info](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
+[more info](https://github.com/venk120soft/Javasript-learnings/blob/master/throttling&debouncing.md)
 
 ## Deep Copy and Shallow Copy
 When DeepCopy is done, changes made to the copied variable, won't reflect to the original variable.
@@ -343,7 +343,7 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
-- [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
+- [Throttling and Debouncing](https://github.com/venk120soft/Javasript-learnings/blob/master/throttling&debouncing.md)
 - [DeepCopy and Shallow Copy](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/DeepVsShallowCopy)
 - [Event Bubling and Event Capturing](https://github.com/venk120soft/Javasript-learnings/blob/master/event_bubblin_vs_capturing.md)
 - [Call Apply Bind](https://github.com/venk120soft/Javasript-learnings/blob/master/call_apply_bind.md)
