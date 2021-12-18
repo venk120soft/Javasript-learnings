@@ -1,3 +1,4 @@
+## Throttling and Debouncing
 Debouncing and Throtling enhances to improve website performance. (by limiting/minimizing series of event fires into few event calls)
 
 Examples include window resizing, scrolling for Throttling and search functionality for debouncing
@@ -54,7 +55,6 @@ var  throttleFunction  =  function (func, delay) {
 }
 ```
 
-## Throttling and Debouncing
 #### Throttling
 Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every 100 milliseconds."
 ```javascript
