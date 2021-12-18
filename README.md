@@ -1,5 +1,5 @@
 External Resources:
-- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4)
+- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4) | [Event loop Task Sub task Visualize](https://www.jsv9000.app/)
 - [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
 - [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
 - [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
@@ -335,7 +335,7 @@ To write an uncontrolled component, instead of writing an event handler for ever
 [more info](https://reactjs.org/docs/uncontrolled-components.html)
 
 External Resources:
-- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4)
+- [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4) | [Event loop Task Sub task Visualize](https://www.jsv9000.app/)
 - [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
 - [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
 - [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
