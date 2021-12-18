@@ -3,6 +3,7 @@ External Resources:
 - [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
 - [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
 - [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+- [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
 - [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
@@ -339,6 +340,7 @@ External Resources:
 - [Currying](https://www.quora.com/What-is-a-difference-between-closure-and-nested-function-javascript)
 - [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
 - [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+- [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 
 In same repo:
 - [Throttling and Debouncing](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
