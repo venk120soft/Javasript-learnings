@@ -26,7 +26,7 @@ setTimeOut and clearTimeout(timerId) can be used to implement this.
 
 [more info](https://github.com/venk120soft/typescriptBestPracticesLearnings/blob/master/Throttling%26Debouncing)
 
-## DeepCopy and Shallow Copy
+## Deep Copy and Shallow Copy
 When DeepCopy is done, changes made to the copied variable, won't reflect to the original variable.
 Whereas ShallowCopy do reflect the changes to original
 
