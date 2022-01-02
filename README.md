@@ -4,6 +4,7 @@ External Resources:
 - [Controlled Un Controlled Components](https://reactjs.org/docs/uncontrolled-components.html)
 - [Controlled Un Controlled Components 2](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
+- [How does asynbc operations are executed](https://www.youtube.com/watch?v=FOZUnFxDDK0)
 
 In same repo:
 - [Throttling and Debouncing](./throttling&debouncing.md)
@@ -13,6 +14,7 @@ In same repo:
 
 # Javascript-learnings
 Note: All the synchronous code will run first and async code will be kept in event loop which will execute after the entire synchronous operations are executed
+
 ## Throttling and Debouncing
 Using Debouncing and Throttling we can improve the performance of webpage. Examples include window resizing, scrolling for Throttling and search functionality for debouncing
 
@@ -161,6 +163,27 @@ As soon as the all the lines of program is executed and reached to last curly br
 
 * Note: * Asynchronous code will run only when all the synchronous code is executed 
 [more info](https://www.youtube.com/watch?v=iLWTnMzWtj4)
+
+## How does javascript program works? How does the asynch operations are executed?
+javascript run time environment have follwing blocks
+- Memory Heap
+- Call stack
+- Web Api's(such as setTimeout and all other async operations)
+- Callback Queue
+- Event loop
+Javascript first allocate the memory for all the variables and functions in Memory Heap and in while code execution all synchornous operations are getting exectuted first by pushing into call stack and execute them in sequesnce 
+
+```
+  console.log('This is 1');
+  setTimeout(()=>console.log('I'm async operation. This is 2'), 2000)
+  console.log('This is 3');
+```
+- Whenever compiler reach Blocking code such as asynchronous operations(setTimeout) then that will push into Call stack then Call stack will call the respective Web api from WebApi's. as soon as web api calls it will be removed from call stack and move to the next statement. like wise all the async operations are pushed into Web api through Call stack.
+
+- Web api will handle the statement based on when it should run from above example it should wait 2000 mi seconds and run the function. so after 2000 m.seconds it will push this function to callback queue. Now the statement is in callback Queue. 
+
+- Event loop is always keep in sync with Callstack, so as soon as Callstack is empty it will look into Callback queue, if it finds any statements are waiting then Event loop will push callback functions into CallStack and Callstack will execute the statements inside function synchronously
+[m0re info in video 16.5](https://www.youtube.com/watch?v=FOZUnFxDDK0)
 ## pass by Value or pass by Ref in javascript
 Javascript Always pass the parameters to the functions by Value 
 
