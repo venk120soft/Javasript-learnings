@@ -137,7 +137,7 @@ bind(): this method will return the new function. This should be the first param
 
 # Question and Answers
 ## What is Javascript? Is it Synchronous or Asynchronous?
-Javascript is a synchronous, single threaded, case sensitive, object oriented programming language
+Javascript is a synchronous, single threaded, case sensitive, object oriented programming language having single callStack and single heap to process the statements
 It is intially created for making the web pages alive. It is used to create and control the web content.
 
 ## How Javascript Program get's executed?
@@ -169,10 +169,10 @@ As soon as the all the lines of program is executed and reached to last curly br
 Javascript is single threaded it means it will run one task at a time as it has only one **Callstack**. Javascript run time environment have follwing blocks
 - Memory Heap
 - Call stack
-- Web Api's(such as setTimeout and all other async operations)
+- Web Api's(such as setTimeout and all other async operations mainly available in Web Browser Window object)
 - Callback Queue
-- Promise Queue / Job Queue --> This is high priorit than the callback queue which is introduced in ES6
-- Event loop
+- Promise Queue / Job Queue --> This is high priority than the callback queue which is introduced in ES6
+- Event loop - Will always be sync with Callstack and Callbackqueue. as soon as CallStack done with synchrnous operations it will push callback queue jobs into Callstack
 Javascript first allocate the memory for all the variables and functions in Memory Heap and in while code execution all synchornous operations are getting exectuted first by pushing into call stack and execute them in sequesnce 
 
 ```
@@ -180,9 +180,9 @@ Javascript first allocate the memory for all the variables and functions in Memo
   setTimeout(()=>console.log('I'm async operation. This is 2'), 2000)
   console.log('This is 3');
 ```
-- Whenever compiler reach Blocking code such as asynchronous operations(setTimeout) then that will push into Call stack then Call stack will call the respective Web api from WebApi's. as soon as web api calls it will be removed from call stack and move to the next statement. like wise all the async operations are pushed into Web api through Call stack.
+- Whenever compiler reach Blocking code such as asynchronous operations(setTimeout) then that will push into Call stack then Call stack will send the call to browser WebApi's, then it will be removed from call stack and move to the next statement. like wise all the async operations are pushed into Web api through Call stack.
 
-- Web api will handle the statement based on when it should run from above example it should wait 2000 mi seconds and run the function. so after 2000 m.seconds it will push this function to callback queue. Now the statement is in callback Queue. 
+- Web api will handle the statement based on when it should run from above example it should wait 2000 mi seconds and run the function. so after 2000 m.seconds it will push this function to callback queue. Now the function statement is in callback Queue. 
 
 - Event loop is always keep in sync with Callstack, so as soon as Callstack is empty it will look into Callback queue, if it finds any statements are waiting then Event loop will push callback functions into CallStack and Callstack will execute the statements inside function synchronously
 [m0re info in video 16.5](https://www.youtube.com/watch?v=FOZUnFxDDK0) | [Event loop, call stack, WebApi's, Callback queue, job queue](https://felixgerschau.com/javascript-event-loop-call-stack/)
