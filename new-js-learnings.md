@@ -1,3 +1,6 @@
+## Resources
+- [Understanding Event Loop, Call Stack, Event & Job Queue in Javascript](https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd)
+- [JavaScript Event Loop And Call Stack Explained](https://felixgerschau.com/javascript-event-loop-call-stack/)
 # What is Javascript?
 
 If a programme language have only one CallStack then it is call single threaded programming language. 
