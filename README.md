@@ -6,6 +6,8 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 - [How does async operations are executed](https://www.youtube.com/watch?v=FOZUnFxDDK0)
 - [Event loop, call stack, WebApi's, Callback queue, job queue](https://felixgerschau.com/javascript-event-loop-call-stack/)
+- [Performance optimization](https://3perf.com/talks/web-perf-101/)
+- [MobX best practices](https://mobx.js.org/defining-data-stores.html)
 
 In same repo:
 - [Throttling and Debouncing](./throttling&debouncing.md)
@@ -359,6 +361,23 @@ In a controlled component, form data is handled by a React component. The altern
 To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
 
 [more info](https://reactjs.org/docs/uncontrolled-components.html)
+## Async vs Defer keywords in script tag How it Works
+- **Normal** The HTML is parsed until the <script> tag is reached. At that point, parsing of HTML is blocked and a request is made to fetch the script file. Once the script is executed, HTML parsing resumes again
+- async and defer are boolean valiues that we add to the script tag to tell the browser how do we want to run our JS files.
+- With async (asynchronous) attribute, the HTML is parsed while the browser loads and execute the script at the same time. The script execution can happen whenever the script becomes ready (potentially before HTML parsing completes) after being fetched in parallel with the document parsing.
+- With defer attribute in place, the script file is downloaded in parallel while the HTML document is still parsing. However, even if the script file is fully downloaded long before the document is finished HTML parsing, the script is not executed until the HTML parsing is complete.
+```javascript
+  <script src=""./test.js />
+  <script src=""./test.js async/>
+  <script src=""./test.js defer/>
+```
+## Difference betwen Async vs Defer
+- async scripts would execute as soon as they download, without keeping the order. This means that if you have an async React bundle and an async app bundle, and the React bundle is larger, the app would download and execute earlier than React – and the site will break.
+- defer scripts, unlike async, would execute in the right order only after all scripts are downloaded. Because of this, defer might be safer than async when optimizing a large complex app.
+
+- Use async attribute if the content of page does not rely on any scripts.
+- Use defer attribute if the content of page rely on script as you want to trigger this script when HTML is fully loaded.
+  [more info](https://3perf.com/talks/web-perf-101/) | [for image explanation](https://www.google.com/search?q=async+vs+defer&sxsrf=AOaemvJWBwjxWdk1PLgHh_-MmUwDGdvI5w:1641547873609&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjX-4yvqp_1AhXel2oFHcXTBAUQ_AUoAXoECAEQAw&biw=1538&bih=797&dpr=1#imgrc=-HPoVDuach1YoM)
 
 External Resources:
 - [How Javascript is executed](https://www.youtube.com/watch?v=iLWTnMzWtj4) | [Event loop Task Sub task Visualize](https://www.jsv9000.app/)
