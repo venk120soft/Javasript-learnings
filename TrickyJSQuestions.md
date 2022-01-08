@@ -57,4 +57,35 @@ console.log(12 + null); // 12
 console.log(12 * null); // 0
 console.log('12' * null); // 0
 ```
+Normal functions vs arrow functions
+```
+var a= {
+  name:'Hello',
+  say(){
+  // This will point to current object
+  console.log(this);}
+}
 
+var b= {
+  name:'Hello',
+  say(){ 
+      return function(){
+          // here this is poiniting to the global window object
+          console.log(this);
+      };}
+ }
+
+var c= {
+  name:'Hello',
+  say(){ return () => 
+  // this will points to it's parent scope(in this case current object)
+  console.log(this);}
+}
+
+a.say() // o/p {name: 'Hello', say: ƒ}
+
+b.say()() // O/p:  window object
+
+c.say()() // o/p {name: 'Hello', say: ƒ}
+```
+High priority forPromises  then web api's after synchronous operations are completely done
