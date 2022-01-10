@@ -56,6 +56,16 @@ console.log('12u' * null); // NaN
 console.log(12 + null); // 12
 console.log(12 * null); // 0
 console.log('12' * null); // 0
+
+false == ""  // true
+false == []  // true
+false == {}  // false
+"" == 0      // true
+"" == []     // true
+"" == {}     // false
+0 == []      // true
+0 == {}      // false
+0 == null    // false  reason it's a primitive value even though it's type is object (it's a bug in javascript null type should not be object)
 ```
 Normal functions vs arrow functions
 ```
