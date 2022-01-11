@@ -36,21 +36,34 @@ safeFunc(()=>{
 })
 ```
 Example to handle the component like button, dropdown, etc
-
-```javascript
+```
 /*
 * To make all the functions passed into props to be exception safe
 */
-export const safeClick = (props: any): any => {
-  let newProps = props;
+export const safeClick = (props: any, onError?: (error: Error) => void): any => {
   for (const k of Object.keys(props)) {
-    if (props[k] && typeof props[k] === 'function') {
-      newProps = {
-        ...newProps,
-        [k]: safeFunc(props[k])
-      };
-    }
+    if (props[k] && typeof props[k] === 'function')
+      props[k] = safeUtil.safeFunc(props[k], onError);
   }
-  return newProps;
+  return props;
 };
+```
+
+Usage from any of the component
+```
+    const { bgContext, iconKey, ariaLabel, bottomMargin, ...restOfProps } = this.props;
+    // handling all the events to make it exception safe
+    const rest = safeClick(restOfProps);
+    let dropdownComponent: JSX.Element;
+
+    // If iconKey is detected as a property, use the default icon dropdown template
+    // It will ignore onRenderOption property, which should not be used at the same time.
+    dropdownComponent = (
+      <Dropdown
+        {...rest}
+        ariaLabel={ariaLabel || this.props.label}
+        onRenderOption={this.onRenderIconOption}
+        title={this.title}
+      />
+    )
 ```
