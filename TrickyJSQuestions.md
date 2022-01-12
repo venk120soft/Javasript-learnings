@@ -99,3 +99,84 @@ b.say()() // O/p:  window object
 c.say()() // o/p {name: 'Hello', say: ƒ}
 ```
 High priority forPromises  then web api's after synchronous operations are completely done
+
+## EPAM 2nd round of Interview on 11th Jan 2022
+```
+// Basic functionality of  types and operators functionality
+void(0) // undefined
+var a = 1 && 2 && 3 && 4;
+var b = 1 || 2 || 3 || 4;
+var c = 0 || null || 1 || 2;
+var d = null && 0 && void(0);
+<a href="javascript: void(0)" />
+----------------------------------------
+// Hoisting Question:
+(function a(a){
+	function a(){};
+	var a =1;
+	console.log(a);
+})(2); // o/p would be 1
+
+(function a(a){
+	var a =1;
+	function a(){};
+	console.log(a);
+})(2); // o/p would be 1
+----------------------------------------
+// Bind call apply question
+let q = {}; // some context
+function f() {} // function we need to execute
+ 
+let a = f.bind(q); // this will return the function
+let b = f.call(q); // this will execute function and return the value. it accepts individual params
+let c = f.apply(q); // this will execute function and return the value. it accepts list of params
+----------------------------------------
+// function vs arrow question
+let a = function() {}
+let b = () => {};
+ 
+var c = new a();
+var d = new b(); // we don't have constructor for arrow functions so we can't do this
+----------------------------------------
+// spread operator question
+var a = [5,4,3,2,1];
+var b = {...a}; // { 0:5, 1:4, 2:3 }
+var c = [...b]; // b is not iterable hence we can't do this. instead we can use [...b.Values()]
+----------------------------------------
+// Prototype question
+function User() {}
+User.prototype = {admin: false};
+ 
+let user = new User();
+User.prototype = {admin: true};
+ 
+alert(user.admin); // false 
+// reason: It will create the new prototype object hence the initial value which points to the original User object creation will be printed
+// after the new object created prototype has changed but `user` is still pointing to the old User prototype
+----------------------------------------
+// Fun question
+console.log([0,1][0,1]);// O/p:  1 ; reason all the elements before comma(,) will not be treated as an index
+[0,1][0,1] === [1,0][1,0] // true
+//compiled as 
+[0,1][0,1]===[0,1][1] ===1 and [1,0][1,0]===[1,0][0]===1
+
+var q = [0,1];
+
+console.log(q[1]); //1
+q[1] === q[0,0,0,0,0,0,0,0,1] // true
+----------------------------------------
+// JS flow test
+setTimeout(()=>console.log(1));
+Promise.resolve().then(()=>console.log(2));
+console.log(3);
+console.log(4);
+// O/p: 3 4 2 1
+----------------------------------------
+// Promise chaining
+Promise.resolve(1)
+.then((a)=>console.log(a)) // 1
+.then((b)=>console.log(b)) // undefined // reason we are getting the console.log(a) as b value it means void opearion
+.then((c)=>console.log(c)) // undefined
+.catch(()=> throw new Error('1')) // it won't come down
+.then((d)=>console.log(d))
+----------------------------------------
