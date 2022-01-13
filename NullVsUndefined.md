@@ -20,6 +20,7 @@ console.log(test.something); //Uncaught TypeError: Cannot read property 'somethi
 
 console.log(null === null); // true
 console.log(null == null); // true
+console.log("null" === null); // false
 
 console.log(undefined === undefined); // true
 console.log(undefined == undefined); // true
@@ -33,6 +34,7 @@ console.log(!undefined); // true
 // All numeric operations on the undefined will lead to the NaN
 console.log(undefined + 1 ); // NaN
 
+console.log(null == 0); // false
 console.log(null + 1); // 1
 console.log(null - 1); // -1
 console.log(null - 200); // -200
@@ -40,5 +42,7 @@ console.log(null * 1); // 0
 console.log(null * 100); // 0
 console.log(null/20); //0
 ```
+- null is not equal to 0 but while the mathematical operations are performed it will be treated as 0
+- undefined does not have any value where as null has value which is null
 ## Why to set the variables to null?
 There are some situations that we need to check for the null if the variable value is nothing
