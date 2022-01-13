@@ -8,9 +8,10 @@ const usingObjectAssign = Object.assign([], string);
 
 // Result
 // o/p for all above would be: [ 'h', 'i', ' ', 't', 'h', 'e', 'r', 'e' ]
+
 /****************************************
 Creating Objects
-
+0. using object assign to convert string to an object
 1. Object literals
 2. Object.create() with descriptors
 3. function + new
@@ -19,6 +20,10 @@ Creating Objects
 
 ****************************************/
 let log = console.log;
+
+// 0. using object assign to convert string to an object
+const stringToObjUsingObjectAssign = Object.assign({}, string); // O/p {0: 'h', 1: 'i', 2: ' ', 3: 't', 4: 'h', 5: 'e', 6: 'r', 7: 'e'}
+log('------------------------------');
 
 // 1. Object literals ////////////////////////////////////
 let obj1 = {
