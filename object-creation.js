@@ -1,3 +1,13 @@
+/** Creating array from string has below methods **/
+const string = 'hi there';
+
+const usingSplit = string.split('');
+const usingSpread = [...string];
+const usingArrayFrom = Array.from(string);
+const usingObjectAssign = Object.assign([], string);
+
+// Result
+// o/p for all above would be: [ 'h', 'i', ' ', 't', 'h', 'e', 'r', 'e' ]
 /****************************************
 Creating Objects
 
