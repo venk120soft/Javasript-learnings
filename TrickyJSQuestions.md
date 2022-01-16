@@ -1,5 +1,41 @@
-### Tricky Questions on JS:
+## Tricky Questions on JS:
+### Usage of const let var
+```javascript
+// TODO:This needs an updata
+var status= 'Loading';
+function(age){
+	var status = 'loading'
+	if(age>18){
+		console.log(status);	
+	}else{
+		console.log('not'+status);
+	}
+}
+age(23);
 
+var status= 'Loading';
+function(age){
+	cons status = 'loading'
+	if(age>18){
+		console.log(status);	
+	}else{
+		console.log('not'+status);
+	}
+}
+age(23);
+
+
+var status= 'Loading';
+function(age){
+	var status = 'loading'
+	if(age>18){
+		console.log(status);	
+	}else{
+		console.log('not'+status);
+	}
+}
+age(23);
+```
 ```javascript
 JSON.stringify(null) // "null"
 JSON.stringify(undefined) // undefined 
