@@ -1,4 +1,45 @@
 ## Tricky Questions on JS:
+## Basic Javascript methods we can use to solve any problem
+```javascript
+	Math.PI
+	Number.MIN_VALUE
+	Number.MAX_VALUE
+	Math.max(1,3,4,2)
+	Math.floor(2.99) = 2 // min integer number
+	Math.ceil(2.05) = 3 // max integer number
+	(123.234566).toFixed(1) // no string only number can be calculated to the toFixed
+	parseInt(123.234)
+	parseInt('123.234')
+	paraseFloat('123.234')
+	'123.234'*1=123.234
+
+	const hello = 'Hello, World!';
+	hello[0] = 'L'; // This has no effect, because strings are immutable
+	hello[0]; // This returns "H"
+
+	'myString'.charCodeAt(0)=104 // Ascii value
+	'myString'.concat('test') ='myStringtest';
+	'myString'.split('')= ['m', 'y', 'S', 't', 'r', 'i', 'n', 'g']
+	'myString'.indexOf('String') =2 // case sensitive
+	"myString".includes('tri') =true // case sensitive
+	'myString'.length=8
+	'myString'.replace('S','hello') = 'myhellotring'
+
+	Array.from('myString')
+	[...'myString']
+	[...'myString'].includes('St')=true;
+	[1,4,5,3,2,4,7].sort((x,y)=>x-y) ; //[1, 2, 3, 4, 4, 5, 7]
+
+	// Dictionary or Object
+	var dict = {
+	name:'Eric'
+	}
+	dict['age']=23; // add/update new key,value pair
+	dict.age=30; // add/update value for the key
+	dict.age // for accessing
+	delete dict.age // for deleting
+	dict.hasOwnProperty('name'); // checking for the key is defined in object		
+```
 ### Usage of const let var
 ```javascript
 // TODO:This needs an updata
