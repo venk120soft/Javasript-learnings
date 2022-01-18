@@ -6,7 +6,7 @@ External Resources:
 - [Event bubbling & capturing](https://javascript.info/bubbling-and-capturing)
 - [How does async operations are executed](https://www.youtube.com/watch?v=FOZUnFxDDK0)
 - [Event loop, call stack, WebApi's, Callback queue, job queue](https://felixgerschau.com/javascript-event-loop-call-stack/)
-- [Performance optimization](https://3perf.com/talks/web-perf-101/)
+- [Performance optimization](https://3perf.com/talks/web-perf-101/) | [Webpack optimizations](https://github.com/GoogleChromeLabs/webpack-libs-optimizations)
 - [MobX best practices](https://mobx.js.org/defining-data-stores.html)
 
 In same repo:
