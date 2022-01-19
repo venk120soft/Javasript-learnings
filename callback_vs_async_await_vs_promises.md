@@ -1,8 +1,9 @@
-Resources:
-[more info](https://www.jsv9000.app/)
-| [msdn docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing) 
-| [async await](https://code-boxx.com/synchronous-asynchronous-javascript/)
-| [good read](https://blog.bitsrc.io/understanding-asynchronous-javascript-the-event-loop-74cd408419ff)
+## Resources:
+- [Visual flow of Javasctipt tasks and call stack](https://www.jsv9000.app/)
+- [Msdn docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing) 
+- [Async await](https://code-boxx.com/synchronous-asynchronous-javascript/)
+- [Good read understanding asynchronous javascript event loop](https://blog.bitsrc.io/understanding-asynchronous-javascript-the-event-loop-74cd408419ff)
+- [Understanding Javascript Promises](https://scotch.io/tutorials/javascript-promises-for-dummies)
 
 JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time.
 > **_NOTE:_** 
