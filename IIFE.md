@@ -12,7 +12,12 @@ It is a design pattern which is also known as a Self-Executing Anonymous Functio
     console.log("Its an IIFE");
     // Add private and public properties and other logic
 })();
-//Its an IIFE
+//o/p: Its an IIFE
+Ex: (function(age){
+    console.log("Its an IIFE", age);
+    // Add private and public properties and other logic
+})(23);
+// o/p: Its an IIFE 23
 ```
 ## Use cases
 - Avoid polluting the global namespace
