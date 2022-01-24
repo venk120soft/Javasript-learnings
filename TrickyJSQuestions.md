@@ -26,10 +26,14 @@
 	'myString'.replace('S','hello') = 'myhellotring'
 
 	Array.from('myString')
+	Array.isArray([1,2,3]);
 	[...'myString']
 	[...'myString'].includes('St')=true;
 	[1,4,5,3,2,4,7].sort((x,y)=>x-y) ; //[1, 2, 3, 4, 4, 5, 7]
-
+	[1,2,3,4,5].slice(1) === [2, 3, 4, 5]; 
+	// Swap element a value to b and b value to a
+	[a, b] = [b, a]
+	
 	// Dictionary or Object
 	var dict = {
 	name:'Eric'
@@ -77,6 +81,7 @@ function(age){
 }
 age(23);
 ```
+
 ```javascript
 JSON.stringify(null) // "null"
 JSON.stringify(undefined) // undefined 
@@ -145,7 +150,7 @@ false == {}  // false
 0 == null    // false  reason it's a primitive value even though it's type is object (it's a bug in javascript null type should not be object)
 ```
 Normal functions vs arrow functions
-```
+```javascript
 var a= {
   name:'Hello',
   say(){
@@ -178,7 +183,7 @@ c.say()() // o/p {name: 'Hello', say: ƒ}
 High priority forPromises  then web api's after synchronous operations are completely done
 
 ## EPAM 2nd round of Interview on 11th Jan 2022
-```
+```javascript
 // Basic functionality of  types and operators functionality
 void(0) // undefined
 var a = 1 && 2 && 3 && 4;
@@ -257,3 +262,4 @@ Promise.resolve(1)
 .catch(()=> throw new Error('1')) // it won't come down
 .then((d)=>console.log(d))
 ----------------------------------------
+```
