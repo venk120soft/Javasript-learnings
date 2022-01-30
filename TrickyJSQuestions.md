@@ -182,6 +182,25 @@ c.say()() // o/p {name: 'Hello', say: ƒ}
 ```
 High priority forPromises  then web api's after synchronous operations are completely done
 
+## EPAM 1st round of Interview on 29th Dec 2021
+Explain how Javascript runs code, event loop, task, micro task.
+```javascript
+const a = new Promise(resolve => {
+  console.log('a');
+  resolve('b')
+})
+setTimeout(() => console.log('c'), 0)
+a.then(b => console.log(b));
+const d = () => console.log('d');
+// driver code
+d();
+
+O/p:
+// 1 - a 
+// 2 - d
+// 3 - b
+// 4 - c
+```
 ## EPAM 2nd round of Interview on 11th Jan 2022
 ```javascript
 // Basic functionality of  types and operators functionality
