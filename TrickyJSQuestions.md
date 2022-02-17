@@ -251,9 +251,15 @@ User.prototype = {admin: false};
 let user = new User();
 User.prototype = {admin: true};
  
-alert(user.admin); // false 
+console.log(user.admin); // false 
 // reason: It will create the new prototype object hence the initial value which points to the original User object creation will be printed
 // after the new object created prototype has changed but `user` is still pointing to the old User prototype
+
+console.log(user.prototype);// undefined
+
+user.prototype = {admin:true};
+console.log(user.admin)//false;
+console.log(user.prototype.admin);// true
 ----------------------------------------
 // Fun question
 console.log([0,1][0,1]);// O/p:  1 ; reason all the elements before comma(,) will not be treated as an index
