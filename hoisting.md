@@ -65,3 +65,34 @@ let a=10;
 Here output shows the reference error due to temporal dead zone because whenever you trying to access variable inside a temporal dead zone it gives a reference error.
 
 If you try to use any let or const variable before declaring, you will land up with an error that reads is not defined.
+
+## Public, Private, Privileged members
+
+```javascript
+function myFunction(value) {
+	// public member
+	this.name = value;
+	// private member
+	var age= 23;
+	// private method
+	function fullNameWithAge(){
+		return this.name + '; age is:'+ age;
+	}
+	// privileged member which will have an access to private members of a function
+	this.getAge = function(){
+		return age;
+	}
+}
+
+const obj= new myFunction("Venkatesh");
+obj;//{name:'Venkatesh', getAge:fn()}
+```
+- public methods are accessible outside the class
+- private members are not accessible outside of the function.
+- privileged members give an access to private members
+- A privileged method is able to access the private variables and methods, and is itself accessible to the public methods and the outside
+[learn more](http://crockford.com/javascript/private.html)
+
+This is possible in javascript due to the closure concept in JS
+
+
