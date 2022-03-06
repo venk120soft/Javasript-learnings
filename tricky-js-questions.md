@@ -288,3 +288,134 @@ Promise.resolve(1)
 .then((d)=>console.log(d))
 ----------------------------------------
 ```
+## Door Dash First Round Code for Carousal (Image slider)
+
+```Javascript
+// https://codesandbox.io/s/react-reddit-slideshow-forked-02wnqi?file=/src/index.js
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
+import "./styles.css";
+
+// NOTE: Modified By Venkatesh Chunchu for Better Code readability after the Interview
+/** Improvements needed for production ready
+ *  1. Add unit and functional test cases
+ *  2. Modularize code base
+ *  3. Style changes needs to be added as per the UX
+ *  4. We can make it typesafe
+ *  */
+
+/**
+ * Get cute dog pictures
+ * @param {number} length
+ * @returns {Promise<Array<{ title: string, url:string }>}
+ */
+const getDogs = async (length = 10) => {
+  return fetch(`https://img.cdn4dd.com/s/managed/interview/tps-dogs/api.json`)
+    .then((response) => response.json())
+    .then((response) => {
+      const dogs = [];
+      response.data.children.forEach((c) => {
+        const title = c.data.title;
+        const url = c.data.preview?.images[0]?.resolutions[2]?.url;
+        if (url) {
+          dogs.push({ title: title, url: url.replaceAll("&amp;", "&") });
+        }
+      });
+      return dogs.slice(0, length); // remove the extra dogs
+    });
+};
+
+// We can read it from the configuration file
+const noOfImages = 10;
+
+const previousItemIndex = (activeItem) => {
+  if (!activeItem || !activeItem.hasOwnProperty("id")) {
+    return 0;
+  }
+  const index = activeItem.id;
+  // Circle back to last index in case if we reach first item else setting it to previos index
+  return index === 0 ? noOfImages - 1 : index - 1;
+};
+
+const nextItemIndex = (activeItem) => {
+  if (!activeItem || !activeItem.hasOwnProperty("id")) {
+    return 0;
+  }
+  const index = activeItem.id;
+  // Setting back to first index in case of last item else setting it to next
+  return index === noOfImages - 1 ? 0 : index + 1;
+};
+
+const App = () => {
+  return (
+    <>
+      {/* Add any other components if required */}
+      <DogsComponent />
+    </>
+  );
+};
+
+const DogsComponent = () => {
+  const [dogs, setDogs] = useState([]);
+  const [activeDog, setActiveDog] = useState({
+    title: "",
+    url: "",
+    id: 0
+  });
+  const previousDog = () => {
+    const dogId = previousItemIndex(activeDog);
+    const dogObj = dogs[dogId];
+    setActiveDog({
+      ...dogObj,
+      id: dogId
+    });
+  };
+  const nextDog = () => {
+    const dogId = nextItemIndex(activeDog);
+    const dogObj = dogs[dogId];
+    setActiveDog({
+      ...dogObj,
+      id: dogId
+    });
+  };
+
+  useEffect(() => {
+    (async () => {
+      const dogsList = await getDogs(noOfImages);
+      setDogs(dogsList);
+      setActiveDog({ ...dogsList[0], id: 0 });
+    })();
+  }, []);
+
+  return (
+    <>
+      <ImageComponent image={activeDog} />
+      <ButtonComponent title="Back" onClick={previousDog} />
+      &nbsp; &nbsp;
+      <ButtonComponent title="Next" onClick={nextDog} />
+    </>
+  );
+};
+
+const ImageComponent = ({ image }) => {
+  return (
+    <>
+      <img src={image.url} title={image.title} alt={image.title} />
+      <p>{image.title}</p>
+    </>
+  );
+};
+
+const ButtonComponent = ({ title, onClick }) => {
+  return (
+    <button title={title} alt={title} onClick={onClick}>
+      {title}
+    </button>
+  );
+};
+
+const rootElement = document.getElementById("root");
+
+ReactDOM.render(<App />, rootElement);
+
+```
