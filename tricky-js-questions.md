@@ -149,6 +149,17 @@ false == {}  // false
 0 == {}      // false
 0 == null    // false  reason it's a primitive value even though it's type is object (it's a bug in javascript null type should not be object)
 ```
+```javascript
+const names1= ["Ramesh", "Suresh", "Rajesh", "Jon"]
+const names2= []
+for(const name of names2){
+	if(names2.some((name2)=>name2===name)){
+		continue;
+	}
+	names2.push(name)
+}
+console.log(names2)
+```
 Normal functions vs arrow functions
 ```javascript
 var a= {
