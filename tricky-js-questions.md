@@ -44,42 +44,60 @@
 	delete dict.age // for deleting
 	dict.hasOwnProperty('name'); // checking for the key is defined in object		
 ```
-### Usage of const let var
+### Usage of const let var KP interview
 ```javascript
-// TODO:This needs an updata
-var status= 'Loading';
-function(age){
-	var status = 'loading'
+function getAge(age){
+	var status = 'adult'
 	if(age>18){
 		console.log(status);	
 	}else{
 		console.log('not'+status);
 	}
 }
-age(23);
+getAge(23); // adult
 
-var status= 'Loading';
-function(age){
-	cons status = 'loading'
-	if(age>18){
-		console.log(status);	
+function getAge(age){
+	const status = 'adult'
+	if( age > 18 ){
+		console.log(status);
 	}else{
 		console.log('not'+status);
 	}
 }
-age(23);
+getAge(13); // not adult
 
-
-var status= 'Loading';
-function(age){
-	var status = 'loading'
+function getAge(age){
 	if(age>18){
-		console.log(status);	
+		const status;
+		status= "adult"
+		console.log(status);
 	}else{
 		console.log('not'+status);
 	}
 }
-age(23);
+getAge(23); // o/p compile error
+getAge(12) // o/p: compile error
+// Reason: due to hoisiting it always looks for the variable are declared properly and bring on top of the scope of where it should exist based on the type of it
+// const variables must be assigned to some value
+
+const names1= ["Ramesh", "Suresh", "Rajesh", "Jon", "Suresh"]
+const names2= []
+for(const name of names2){
+	if(names2.some((name2)=>name2===name)){
+		continue;
+	}
+	names2.push(name)
+}
+console.log(names2) o/p: []
+
+// Littile different with names1
+for(const name of names1){
+	if(names2.some((name2)=>name2===name)){
+		continue;
+	}
+	names2.push(name)
+}
+console.log(names2) o/p: ["Ramesh", "Suresh", "Rajesh", "Jon"]
 ```
 
 ```javascript
@@ -149,17 +167,6 @@ false == {}  // false
 0 == {}      // false
 0 == null    // false  reason it's a primitive value even though it's type is object (it's a bug in javascript null type should not be object)
 ```
-```javascript
-const names1= ["Ramesh", "Suresh", "Rajesh", "Jon"]
-const names2= []
-for(const name of names2){
-	if(names2.some((name2)=>name2===name)){
-		continue;
-	}
-	names2.push(name)
-}
-console.log(names2)
-```
 Normal functions vs arrow functions
 ```javascript
 var a= {
@@ -225,12 +232,12 @@ var d = null && 0 && void(0);
 // Hoisting Question:
 (function a(a){
 	function a(){};
-	var a =1;
+	var a = 1;
 	console.log(a);
 })(2); // o/p would be 1
 
 (function a(a){
-	var a =1;
+	var a = 1;
 	function a(){};
 	console.log(a);
 })(2); // o/p would be 1
