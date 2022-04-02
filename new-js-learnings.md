@@ -21,8 +21,8 @@ Javascript is synchronous single threaded programming language i.e only one thin
 Ex1: Without Promises Job Queue is not included
 ```
   console.log('1');
-  setTimeout(()=>console.log('2'), 0);
-  // or setTimeout(()=>console.log('2'), 100);
+  setTimeout(()=>console.log('2'), 1000);
+  // or setTimeout(()=>console.log('2'), 0);
   // or setTimeout(()=>console.log('2'));
   console.log('3');
   
@@ -52,6 +52,7 @@ Ex2: With Promises Job Queue will be included in the flow [more info](https://me
        Message no. 4: 2nd Promise
        Message no. 2: setTimeout
 ```
+### Javascript program flow
 If we take the above example and run through javascript runt time environment below are steps it follows:
 
 - First line will be sent to the CallStack and execute the line and pop up as an anonymous task
