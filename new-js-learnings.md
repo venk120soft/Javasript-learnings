@@ -21,7 +21,9 @@ Javascript is synchronous single threaded programming language i.e only one thin
 Ex1: Without Promises Job Queue is not included
 ```
   console.log('1');
-  setTimeout(()=>console.log('2'), 1000);
+  setTimeout(()=>console.log('2'), 0);
+  // or setTimeout(()=>console.log('2'), 100);
+  // or setTimeout(()=>console.log('2'));
   console.log('3');
   
   O/P: 1
