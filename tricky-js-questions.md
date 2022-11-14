@@ -198,7 +198,21 @@ b.say()() // O/p:  window object
 
 c.say()() // o/p {name: 'Hello', say: ƒ}
 ```
-High priority forPromises  then web api's after synchronous operations are completely done
+High priority for Promises  then web api's after synchronous operations are completely done
+
+## 11 ways to convert a string to a number using JavaScript.
+
+1. using the Number() function => Number("awesome"): NaN => Number("12"): 12
+2. using the parseInt() function => parseInt("12", 10): 12
+3. using the parseFloat() function
+4. using the unary plus operator (+)
+5. multiplying the string by the number 1
+6. dividing the string by the number 1
+7. subtracting the number 0 from the string
+8. using the bitwise NOT operator (~)
+9. using the Math.floor() function
+10. using the Math.ceil() function
+11. using the Math.round() function
 
 ## EPAM 1st round of Interview on 29th Dec 2021
 Explain how Javascript runs code, event loop, task, micro task.
